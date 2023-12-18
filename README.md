@@ -9,7 +9,7 @@
   </p>
 </p>
 <br/>
-Características Principales
+##Características Principales
 *Persistencia de Datos:
 
 *Los datos de los productos se almacenan en un archivo específico.
