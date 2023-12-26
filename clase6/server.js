@@ -2,8 +2,13 @@ import express from "express"
 
 const server = express()
 
-const PORT = 8080
+const PORT = 8080;
 const ready = ()=>console.log("server ready on port" + PORT)
+
+//middlewares: son funciones
+server.use(express.urlencoded({ extended: true}))
+//obliga al servidor a utilizar la función encargada de recibir url complejas
+//me habilita el manejo de queries (consultas) y params (parámetros)
 
 server.listen(PORT, ready);
 
@@ -24,6 +29,7 @@ const ruta2 = "/events"
 const funcion2 = (req,res)=> {
     const all = ["aca","deberian","estar","todos","los","eventos"]
     return res.status(200).send(all)
+    //pot ahora usemos send() para enviar cadenas de texto
 }
 server.get(ruta2,funcion2)
 
@@ -34,18 +40,31 @@ const funcion3 = (req,res)=> {
     const all = ["array","de","usuarios","del","archivo"]
     return res.status(200).json(all)
     //usemos json() para enviar objetos,arrays, etc
-}
-
+};
 
 server.get(ruta3,funcion3)
 //cuando el cliente me llama
 //con la ruta3 se ejecuta la funcion3
 
 const rutaConParans = "api/products/:pid"
-//con la ruta tiiene el parametro pid
+//con la ruta tiene el parametro pid
 //debido a los :
 const cbParans1 = (req, res) => {
-    const { pid } =req.parans;
+    const { pid } = req.parans;
     return res.status(200).send("el id del producto a filtrar es: "+pid);
 };
-server.get(rutaConParans1, cbParans1);
+server.get(rutaConParans, cbParans1);
+
+const rutaConParans2 = "api/products/:title/:category/:price/:stock";
+//definí un endpoint con 4 params (NO hay límites!!!)
+const cbParams2 = (req, res) => {
+  const { title, category, price, stock } = req.params;
+  return res.status(200).json({
+      title,
+      category,
+  });
+};
+server.get(rutaConParans2, cbParans2);
+
+
+
