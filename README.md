@@ -57,20 +57,15 @@ Utiliza los managers de memoria mencionados anteriormente.
 <br/>npm (Gestor de paquetes de Node.js)
 <br/>
 
-Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
-Instala las dependencias: npm install
-Inicia el servidor: npm start
-Ejecuta las pruebas: npm test
-¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
 <p align="center">
   <h2 
     align="center">Instrucciones de Uso
  </h2>
-Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
-Instala las dependencias: npm install
-Inicia el servidor: npm start
-Ejecuta las pruebas: npm test
-¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
+<br/>Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
+<br/>Instala las dependencias: npm install
+<br/>Inicia el servidor: npm start
+<br/>Ejecuta las pruebas: npm test
+<br/>¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
 
 
 </p>
