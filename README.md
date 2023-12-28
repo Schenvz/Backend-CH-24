@@ -41,16 +41,16 @@ Este archivo contiene pruebas de integración utilizando Jest y Supertest para a
 <h3>
   Funcionalidades CRUD:
 </h3>
-Crear: Agregar nuevos productos al sistema.
-Leer: Obtener detalles de un producto específico o todos los productos.
-Actualizar: Modificar la información de un producto existente.
-Eliminar: Eliminar productos del sistema.
+<br/>Crear: Agregar nuevos productos al sistema.
+<br/>Leer: Obtener detalles de un producto específico o todos los productos.
+<br/>Actualizar: Modificar la información de un producto existente.
+<br/>Eliminar: Eliminar productos del sistema.
 
 <h3>
   <br/> Requisitos
 </h3>
-Node.js
-npm (Gestor de paquetes de Node.js)
+<br/>Node.js
+<br/>npm (Gestor de paquetes de Node.js)
 <br/>
 
 
