@@ -1,75 +1,83 @@
-const fs = require("fs");
-const crypto = require("crypto");
+const fs = require("fs").promises; // Importando el módulo 'fs' con promesas
+const crypto = require("crypto"); // Importando el módulo 'crypto'
 
-class EventManager {
-  constructor(path = "./events.db.json") {
-    this.path = path;
-    this.events = [];
+class GestorEventos {
+  constructor(path) {
+    this.path = path; // Ruta donde se guardarán los eventos
+    this.eventos = []; // Array para almacenar los eventos
+    this.inicializar(); // Método para inicializar la lista de eventos desde el archivo
   }
 
-  setPath(path) {
-    this.path = path;
-  }
-
-  async saveEventsToFile() {
+  // Inicializa el array de eventos desde el archivo
+  async inicializar() {
     try {
-      await fs.promises.writeFile(this.path, JSON.stringify(this.events, null, 2));
+      const data = await fs.readFile(this.path, "utf8");
+      this.eventos = JSON.parse(data);
+    } catch (error) {
+      console.error("Error al inicializar eventos:", error);
+    }
+  }
+
+  // Guarda los eventos en el archivo
+  async guardarEventosEnArchivo() {
+    try {
+      await fs.writeFile(this.path, JSON.stringify(this.eventos, null, 2));
       console.log("Eventos guardados con éxito");
     } catch (error) {
       console.error("Error guardando eventos:", error);
     }
   }
 
-  async getAllEvents() {
+  // Obtiene todos los eventos
+  async obtenerTodosLosEventos() {
     try {
-      const data = await fs.promises.readFile(this.path, "utf8");
-      const events = JSON.parse(data);
-      console.log(events);
-      return events;
+      const data = await fs.readFile(this.path, "utf8");
+      return JSON.parse(data);
     } catch (error) {
       console.error("Error leyendo eventos:", error);
       return [];
     }
   }
 
-  async addEvent(eventData) {
-    const event = {
-      id: this.events.length + 1,
-      title: eventData.title || "Evento",
-      description: eventData.description || "",
-      date: eventData.date || "",
-      location: eventData.location || "",
-      // Puedes agregar más propiedades según las necesidades de tu aplicación.
+  // Añade un nuevo evento
+  async agregarEvento(datosEvento) {
+    const evento = {
+      id: crypto.randomBytes(12).toString("hex"), // Genera un ID único para el evento
+      titulo: datosEvento.titulo || "Incendio",
+      descripcion: datosEvento.descripcion || "Evento normal",
+      fecha: datosEvento.fecha || "2002/05/27",
+      ubicacion: datosEvento.ubicacion || "Estambul",
     };
-    this.events.push(event);
-    await this.saveEventsToFile();
-    return event;
+    this.eventos.push(evento);
+    await this.guardarEventosEnArchivo();
+    return evento;
   }
 
-  async getEventById(id) {
-    const events = await this.getAllEvents();
-    return events.find((event) => event.id === id);
+  // Obtiene un evento por su ID
+  async obtenerEventoPorId(id) {
+    const eventos = await this.obtenerTodosLosEventos();
+    return eventos.find((evento) => evento.id === id);
   }
 
-  async updateEvent(id, updatedData) {
-    const eventIndex = this.events.findIndex(
-      (event) => event.id === id
-    );
-    if (eventIndex !== -1) {
-      this.events[eventIndex] = {
-        ...this.events[eventIndex],
-        ...updatedData,
+  // Actualiza un evento por su ID con nuevos datos
+  async actualizarEvento(id, datosActualizados) {
+    const indiceEvento = this.eventos.findIndex((evento) => evento.id === id);
+    if (indiceEvento !== -1) {
+      this.eventos[indiceEvento] = {
+        ...this.eventos[indiceEvento],
+        ...datosActualizados,
       };
-      await this.saveEventsToFile();
-      return this.events[eventIndex];
+      await this.guardarEventosEnArchivo();
+      return this.eventos[indiceEvento];
     }
     return null;
   }
 
-  async deleteEvent(id) {
-    this.events = this.events.filter((event) => event.id !== id);
-    await this.saveEventsToFile();
+  // Elimina un evento por su ID
+  async eliminarEvento(id) {
+    this.eventos = this.eventos.filter((evento) => evento.id !== id);
+    await this.guardarEventosEnArchivo();
   }
 }
 
-module.exports = EventManager;
+module.exports = GestorEventos;
