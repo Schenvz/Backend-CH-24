@@ -61,13 +61,17 @@ Utiliza los managers de memoria mencionados anteriormente.
   <h2 
     align="center">Instrucciones de Uso
  </h2>
-<br/>Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
-<br/>Instala las dependencias: npm install
-<br/>Inicia el servidor: npm start
-<br/>Ejecuta las pruebas: npm test
-<br/>¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
-
-
 </p>
+<p align="center">
+  <br/>Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
+  <br/>Instala las dependencias: npm install
+  <br/>Inicia el servidor: npm start
+  <br/>Ejecuta las pruebas: npm test
+  <br/>¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
+</p>
+
+
+
+
 
 
