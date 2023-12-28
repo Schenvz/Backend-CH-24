@@ -57,17 +57,22 @@ Utiliza los managers de memoria mencionados anteriormente.
 <br/>npm (Gestor de paquetes de Node.js)
 <br/>
 
-
+Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
+Instala las dependencias: npm install
+Inicia el servidor: npm start
+Ejecuta las pruebas: npm test
+¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
 <p align="center">
-  <h2 align="center">Cómo Usar </h3>
-  <p align="center"> Para comenzar a utilizar el sistema de gestión de productos: 
-    <br/>Clona el repositorio en tu máquina local.
-    <br/>Instala las dependencias necesarias (si las hubiera).
-    <br/>Ejecuta el programa principal (o los scripts correspondientes) para interactuar con el sistema de gestión de productos.
-    <br/>Asegúrate de revisar la documentación y los comentarios en el código para comprender mejor cada función y su propósito en el sistema.
-    <br/>
-    <br/>
-  </p>
+  <h2 
+    align="center">Instrucciones de Uso
+ </h2>
+Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
+Instala las dependencias: npm install
+Inicia el servidor: npm start
+Ejecuta las pruebas: npm test
+¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
+
+
 </p>
-<br/>
+
 
