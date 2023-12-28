@@ -63,7 +63,7 @@ Utiliza los managers de memoria mencionados anteriormente.
  </h2>
 </p>
 <p align="center">
-  <br/>Clona este repositorio: git clone https://github.com/tu-usuario/tu-repo.git
+  <br/>Clona este repositorio: git clone [https://github.com/Schenvz/Backend-CH-24/](https://github.com/Schenvz/Backend-CH-24/tree/main)
   <br/>Instala las dependencias: npm install
   <br/>Inicia el servidor: npm start
   <br/>Ejecuta las pruebas: npm test
