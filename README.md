@@ -17,8 +17,10 @@
   Carpeta clase6/data/memory
   <br/>
 </h3>
-Esta carpeta contiene implementaciones de "managers" en memoria para gestionar eventos (events.memory.js) y usuarios (users.memory.js). 
+<p>
+  Esta carpeta contiene implementaciones de "managers" en memoria para gestionar eventos (events.memory.js) y usuarios (users.memory.js). 
 Estos managers proporcionan métodos para crear, leer, actualizar y eliminar datos, manteniendo la persistencia a través de archivos JSON.
+</p>
 
 <h3>
   Carpeta clase6/test
