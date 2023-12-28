@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('./data/memory'); // Asegúrate de que esta ruta sea correcta
+const app = require('./data/memory');
 
 describe('GET /', () => {
   it('responds with JSON containing "hello"', async () => {
