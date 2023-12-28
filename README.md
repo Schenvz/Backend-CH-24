@@ -36,16 +36,26 @@ Utiliza los managers de memoria mencionados anteriormente.
 </h3>
 Este archivo contiene pruebas de integración utilizando Jest y Supertest para asegurar que la API REST funcione como se espera.
 
-Funcionalidades CRUD:
 
+<br/>
+<h3>
+  Funcionalidades CRUD:
+</h3>
 Crear: Agregar nuevos productos al sistema.
 Leer: Obtener detalles de un producto específico o todos los productos.
 Actualizar: Modificar la información de un producto existente.
 Eliminar: Eliminar productos del sistema.
 
+<h3>
+  <br/> Requisitos
+</h3>
+Node.js
+npm (Gestor de paquetes de Node.js)
 <br/>
+
+
 <p align="center">
-  <h3 align="center">Cómo Usar </h3>
+  <h2 align="center">Cómo Usar </h3>
   <p align="center"> Para comenzar a utilizar el sistema de gestión de productos: 
     <br/>Clona el repositorio en tu máquina local.
     <br/>Instala las dependencias necesarias (si las hubiera).
