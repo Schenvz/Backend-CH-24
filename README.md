@@ -1,27 +1,41 @@
 <br/>
 <p align="center">
-  <h3 align="center">Sistema de Gestión de Productos en Node.js
-</h3>
-  <p align="center"> Este proyecto implementa un sistema de gestión de productos utilizando Node.js. 
-    El sistema permite agregar, leer, actualizar y eliminar productos, y almacena la información de los productos en un archivo JSON para asegurar la persistencia de datos.
+  <h1 align="center">Sistema de Gestión de Productos en Node.js
+</h1>
+  <p align="center"> Este repositorio contiene el código fuente de una aplicación de gestión de eventos y usuarios desarrollada en Node.js. 
+    La aplicación utiliza archivos JSON para almacenar datos de eventos y usuarios, y se implementa una estructura de gestión de datos modular para facilitar la expansión y el mantenimiento.
     <br/>
     <br/>
   </p>
 </p>
 <br/>
-Características Principales
-Persistencia de Datos:
+<h2>
+  Estructura del Proyecto
+  <br/>
+</h2>
+<h3>
+  Carpeta clase6/data/memory
+  <br/>
+</h3>
+Esta carpeta contiene implementaciones de "managers" en memoria para gestionar eventos (events.memory.js) y usuarios (users.memory.js). 
+Estos managers proporcionan métodos para crear, leer, actualizar y eliminar datos, manteniendo la persistencia a través de archivos JSON.
 
-Los datos de los productos se almacenan en un archivo específico.
-Esto garantiza que los productos se mantengan incluso después de reiniciar el programa.
-Operaciones Asíncronas:
+<h3>
+  Carpeta clase6/test
+</h3>
+Aquí encontrarás casos de prueba utilizando Jest para garantizar el correcto funcionamiento de los "managers" de eventos y usuarios.
 
-Se utiliza el módulo fs.promises de Node.js para operaciones de lectura y escritura asíncronas.
-Esto permite que el programa no se bloquee mientras espera que se completen las operaciones de E/S.
-Manejo de Errores:
+<h3>
+  Carpeta clase6/server.js
+</h3>
+El archivo server.js inicializa un servidor Express que expone una API REST para interactuar con los eventos y usuarios. 
+Utiliza los managers de memoria mencionados anteriormente.
 
-Se implementó un manejo de errores robusto para las operaciones de archivo.
-Esto garantiza que cualquier error, como un archivo no encontrado o problemas de escritura, se capture y se maneje adecuadamente.
+<h3>
+  Carpeta clase6/test/server.test.js
+</h3>
+Este archivo contiene pruebas de integración utilizando Jest y Supertest para asegurar que la API REST funcione como se espera.
+
 Funcionalidades CRUD:
 
 Crear: Agregar nuevos productos al sistema.
