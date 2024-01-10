@@ -14,7 +14,7 @@
   <br/>
 </h2>
 <h3>
-  Carpeta clase6/data/memory
+  Carpeta /data/memory
   <br/>
 </h3>
 <p>
@@ -23,20 +23,20 @@ Estos managers proporcionan métodos para crear, leer, actualizar y eliminar dat
 </p>
 
 <h3>
-  Carpeta clase6/test
+  Carpeta /test
 </h3>
 <p>
   Aquí encontrarás casos de prueba utilizando Jest para garantizar el correcto funcionamiento de los "managers" de eventos y usuarios.
 </p>
 <h3>
-  Carpeta clase6/server.js
+  Carpeta /server.js
 </h3>
 <p>
   El archivo server.js inicializa un servidor Express que expone una API REST para interactuar con los eventos y usuarios. 
 Utiliza los managers de memoria mencionados anteriormente.
 </p>
 <h3>
-  Carpeta clase6/test/server.test.js
+  Carpeta /test/server.test.js
 </h3>
 <p>
   Este archivo contiene pruebas de integración utilizando Jest y Supertest para asegurar que la API REST funcione como se espera.
