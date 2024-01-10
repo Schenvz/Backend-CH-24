@@ -14,7 +14,7 @@
   <br/>
 </h2>
 <h3>
-  Carpeta clase6/data/memory
+  Carpeta /data/memory
   <br/>
 </h3>
 <p>
@@ -23,7 +23,7 @@ Estos managers proporcionan métodos para crear, leer, actualizar y eliminar dat
 </p>
 
 <h3>
-  Carpeta clase6/test
+  Carpeta /test
 </h3>
 <p>
   Aquí encontrarás casos de prueba utilizando Jest para garantizar el correcto funcionamiento de los "managers" de eventos y usuarios.
