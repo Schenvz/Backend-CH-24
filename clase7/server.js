@@ -1,5 +1,5 @@
-const express = require("express");
-const events = require("./data/fs/events.fs.js");
+import express from "express";
+import events from "./data/fs/events.fs.js";
 
 const server = express();
 
@@ -7,51 +7,131 @@ const PORT = 8080;
 const ready = () => console.log("server ready on port " + PORT);
 
 //middleware
+server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 server.listen(PORT, ready);
 
 //endpoint
-server.get("/api/events", (req, res) => {
+server.post("/api/events", async (req, res) => {
   try {
-    const all = events.getAllEvents();
-    if (Array.isArray(all)) {
-      return res.status(200).json({
-        success: true,
-        response: all,
+    const data = req.body;
+    const response = await events.createEvent(data);
+    if (response === "Name & Place are required") {
+      return res.json({
+        statusCode: 400,
+        message: response,
       });
     } else {
-      return res.status(404).json({
-        success: false,
-        message: all,
+      return res.json({
+        statusCode: 201,
+        response,
       });
     }
   } catch (error) {
-    return res.status(500).json({
-      success: false,
+    console.log(error);
+    return res.json({
+      statusCode: 500,
       message: error.message,
     });
   }
 });
 
-server.get("/api/events/:eid", (req, res) => {
+server.get("/api/events", async (req, res) => {
   try {
-    const { eid } = req.params;
-    const one = events.getEventById(eid);
-    if (one) {
-      return res.status(200).json({
-        success: true,
-        response: one,
+    const all = await events.readEvents();
+    if (Array.isArray(all)) {
+      return res.json({
+        statusCode: 200,
+        response: all,
       });
     } else {
-      return res.status(404).json({
-        success: false,
-        message: "Event not found",
+      return res.json({
+        statusCode: 404,
+        message: all,
       });
     }
   } catch (error) {
-    return res.status(500).json({
-      success: false,
+    console.log(error);
+    return res.json({
+      statusCode: 500,
+      message: error.message,
+    });
+  }
+});
+
+server.get("/api/events/:eid", async (req, res) => {
+  try {
+    const { eid } = req.params;
+    const one = await events.readEventById(eid);
+    if (typeof one === "string") {
+      return res.json({
+        statusCode: 404,
+        message: one,
+      });
+    } else {
+      return res.json({
+        statusCode: 200,
+        response: one,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      statusCode: 500,
+      message: error.message,
+    });
+  }
+});
+
+server.put("/api/events/:eid/:quantity", async (req, res) => {
+  try {
+    const { eid, quantity } = req.params;
+    const response = await events.soldticket(quantity, eid);
+    if (typeof response === "number") {
+      return res.json({
+        statusCode: 200,
+        response: "capacity available: " + response,
+      });
+    } else if (response === "There isn't any event") {
+      return res.json({
+        statusCode: 404,
+        message: response,
+      });
+    } else {
+      return res.json({
+        statusCode: 400,
+        message: response,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      statusCode: 500,
+      message: error.message,
+    });
+  }
+});
+
+server.delete("/api/events/:eid", async (req, res) => {
+  try {
+    const { eid } = req.params;
+    const response = await events.removeEventById(eid);
+    if (response === "There isn't any event") {
+      return res.json({
+        statusCode: 404,
+        message: response,
+      });
+    } else {
+      return res.json({
+        statusCode: 200,
+        response,
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    return res.json({
+      statusCode: 500,
       message: error.message,
     });
   }

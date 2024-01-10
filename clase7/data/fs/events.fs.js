@@ -1,7 +1,7 @@
-const fs = require("fs").promises; // Importando el módulo 'fs' con promesas
-const crypto = require("crypto"); // Importando el módulo 'crypto'
+import fs from "fs/promises"; // Importando el módulo 'fs' con promesas
+import crypto from "crypto"; // Importando el módulo 'crypto'
 
-class GestorEventos {
+export default class GestorEventos {
   constructor(path) {
     this.path = path; // Ruta donde se guardarán los eventos
     this.eventos = []; // Array para almacenar los eventos
@@ -79,5 +79,3 @@ class GestorEventos {
     await this.guardarEventosEnArchivo();
   }
 }
-
-module.exports = GestorEventos;
