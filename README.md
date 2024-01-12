@@ -1,9 +1,9 @@
 <br/>
 <p align="center">
-  <h1 align="center">Sistema de Gestión de Productos en Node.js
+  <h1 align="center">Servidor Express con Ejemplos de Middlewares
 </h1>
-  <p align="center"> Este repositorio contiene el código fuente de una aplicación de gestión de eventos y usuarios desarrollada en Node.js. 
-    La aplicación utiliza archivos JSON para almacenar datos de eventos y usuarios, y se implementa una estructura de gestión de datos modular para facilitar la expansión y el mantenimiento.
+  <p align="center"> Este repositorio contiene el código fuente de un servidor Node.js con Express. 
+    La aplicación está estructurada para manejar diversas rutas y utiliza middleware para funcionalidades específicas,     como el manejo de errores y la gestión de rutas personalizadas.
     <br/>
     <br/>
   </p>
@@ -23,33 +23,37 @@ Estos managers proporcionan métodos para crear, leer, actualizar y eliminar dat
 </p>
 
 <h3>
-  Carpeta /test
+  Carpetas /routes
 </h3>
 <p>
-  Aquí encontrarás casos de prueba utilizando Jest para garantizar el correcto funcionamiento de los "managers" de eventos y usuarios.
+  RUTAS
 </p>
 <h3>
   Carpeta /server.js
 </h3>
 <p>
-  El archivo server.js inicializa un servidor Express que expone una API REST para interactuar con los eventos y usuarios. 
-Utiliza los managers de memoria mencionados anteriormente.
+  Configura y ejecuta un servidor Express con varios middlewares para manejar solicitudes, rutas y errores. 
+  Además, utiliza un archivo adicional (router) para gestionar las rutas específicas de la aplicación.
+  La funcionalidad exacta puede variar dependiendo del contenido del archivo router y otros archivos relacionados.
+  También utiliza los managers de memoria mencionados anteriormente.
 </p>
 <h3>
-  Carpeta /test/server.test.js
+  Carpeta middlewares
 </h3>
 <p>
-  Este archivo contiene pruebas de integración utilizando Jest y Supertest para asegurar que la API REST funcione como se espera.
+  Carpeta que almacena middleware, incluyendo errorHandler y pathHandler.
 </p>
 <br/>
 <h3>
-  Funcionalidades CRUD:
+  Funcionalidades Principales:
 </h3>
-<br/>Crear: Agregar nuevos productos al sistema.
-<br/>Leer: Obtener detalles de un producto específico o todos los productos.
-<br/>Actualizar: Modificar la información de un producto existente.
-<br/>Eliminar: Eliminar productos del sistema.
-
+  <p>Manejo de Errores:
+    Middleware errorHandler que responde con detalles de error y un código de estado personalizado.
+  </p>
+  <p>
+    Manejo de Rutas Personalizadas:
+    Middleware pathHandler que responde con un mensaje personalizado para la ruta "/errorHandler".
+  </p>
 <h3>
   <br/> Requisitos
 </h3>
@@ -63,10 +67,9 @@ Utiliza los managers de memoria mencionados anteriormente.
  </h2>
 </p>
 <p align="center">
-  <br/>Clona este repositorio: git clone [https://github.com/Schenvz/Backend-CH-24/](https://github.com/Schenvz/Backend-CH-24/tree/main)
   <br/>Instala las dependencias: npm install
-  <br/>Inicia el servidor: npm start
-  <br/>Ejecuta las pruebas: npm test
+  <br/>Inicia el servidor: npm init
+  </br>Ejecuta la aplicación con node server.js.
   <br/>¡Diviértete explorando y extendiendo la funcionalidad de la aplicación!
 </p>
 
