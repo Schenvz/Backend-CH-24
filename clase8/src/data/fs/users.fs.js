@@ -1,5 +1,5 @@
 const fs = require("fs").promises;
-const GestorEventos = require("./data/memory/events.memory.js"); // Importando el gestor de eventos
+const GestorEventos = require("./data/memory/events.memory.js");
 
 class GestorUsuarios {
   constructor(path) {
@@ -60,4 +60,4 @@ class GestorUsuarios {
   }
 }
 
-module.exports = GestorUsuarios;
+export default GestorUsuarios;

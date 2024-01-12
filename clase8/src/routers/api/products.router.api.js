@@ -1,10 +1,9 @@
 import { Router } from "express";
 import events from "../../data/fs/events.fs.js";
-import propsEvents from "../../middlewares/propsEvents.mid.js";
 
 const eventsRouter = Router();
 
-eventsRouter.post("/", propsEvents, async (req, res, next) => {
+eventsRouter.post("/", async (req, res, next) => {
   try {
     const data = req.body;
     const response = await events.createEvent(data);
@@ -16,7 +15,8 @@ eventsRouter.post("/", propsEvents, async (req, res, next) => {
     return next(error);
   }
 });
-//det de todo
+
+// Detalles de todo
 eventsRouter.get("/", async (req, res, next) => {
   try {
     const all = await events.readEvents();
@@ -28,7 +28,8 @@ eventsRouter.get("/", async (req, res, next) => {
     return next(error);
   }
 });
-//get de uno
+
+// Detalles de uno
 eventsRouter.get("/:eid", async (req, res, next) => {
   try {
     const { eid } = req.params;
@@ -69,5 +70,3 @@ eventsRouter.delete("/:eid", async (req, res, next) => {
 });
 
 export default eventsRouter;
-
-//k
