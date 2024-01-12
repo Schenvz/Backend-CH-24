@@ -1,0 +1,20 @@
+[
+  {
+    "id": "560fce785bb0c56284fcefc3",
+    "name": "jose",
+    "photo": "https://picsum.photos/200",
+    "email": "jH6Qm@example.com"
+  },
+  {
+    "id": "3831c72a89eecb0ce8d55bad",
+    "name": "Pablo",
+    "photo": "https://picsum.photos/200",
+    "email": "jH6Qm@example.com"
+  },
+  {
+    "id": "d8869bd39c36cf3be4401d1e",
+    "name": "Matias",
+    "photo": "https://picsum.photos/200",
+    "email": "jH6Qm@example.com"
+  }
+]

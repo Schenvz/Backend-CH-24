@@ -1,0 +1,23 @@
+[
+  {
+    "id": "5b55316e4b171d2f26c2ebb0",
+    "title": "tablet samsung",
+    "photo": "https://picsum.photos/200",
+    "stock": 5,
+    "price": 3000
+  },
+  {
+    "id": "ca82151d5832d32f2b6dfc62",
+    "title": "laptop",
+    "photo": "https://picsum.photos/200",
+    "price": 100,
+    "stock": 10
+  },
+  {
+    "id": "6d4ee0a456e11436274c8a20",
+    "title": "tv",
+    "photo": "https://picsum.photos/200",
+    "price": 100,
+    "stock": 10
+  }
+]
