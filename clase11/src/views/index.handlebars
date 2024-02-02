@@ -1,0 +1,23 @@
+<main class="flex-grow-1 p-3 m-auto my-2">
+  <h1>pag ejemplo</h1>
+  <h3>{{date}}</h3>
+  {{#if details}}
+    <p>{{details}}</p>
+  {{else}}
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae qui quo
+      consequatur sit ex voluptatibus corporis aut porro quaerat laudantium
+      libero et inventore saepe nisi delectus, magni quas fugiat illo.
+      Praesentium cum voluptate tenetur laboriosam maiores quaerat sunt delectus
+      ducimus ipsam quam eos iure porro consequuntur laborum, sit provident?
+      Explicabo molestiae quae architecto est quod iusto dicta, ut aspernatur
+      dignissimos. Fuga expedita temporibus excepturi mollitia, dolorem non.
+      Harum laborum esse excepturi? Reiciendis laboriosam repellendus molestiae
+      fugit ad accusamus nihil qui sunt necessitatibus! Autem, saepe quos? Modi,
+      rerum fugiat. Sapi et, vel ea cupiditate temporibus numquam corrupti
+      saepe quidem iure optio quia consequatur dignissimos natus vitae. Dolores,
+      officiis aspernatur.</p>
+  {{/if}}
+  {{#each events}}
+    <h3>{{this}}</h3>
+  {{/each}}
+</main>
