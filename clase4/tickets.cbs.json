@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "title": "Lapiz",
+    "description": "Un simple lápiz xd",
+    "price": 9,
+    "thumbnail": "lapiz2.jpg",
+    "code": "LP1001",
+    "stock": 1021
+  }
+]

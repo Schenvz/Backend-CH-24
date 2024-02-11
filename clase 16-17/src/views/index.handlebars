@@ -1,0 +1,17 @@
+<main class="flex-grow-1 p-3 m-auto my-2">
+  <h1>Coder Shop</h1>
+  <h3>{{date}}</h3>
+  {{#if details}}
+    <p>{{details}}</p>
+  {{else}}
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae qui quo
+      consequatur sit ex voluptatibus corporis aut porro quaerat laudantium
+      libero et inventore saepe nisi delectus, magiente recusandae, at
+      suscipit corrupti tempora rem ea veniam omnis soluta. Iste, dolorem eos!
+      Voluptate pariatur suscipit, at iusto enim fugoptio quia
+      consequatur dignissimos natus vitae. Dolores, officiis aspernatur.</p>
+  {{/if}}
+  {{#each events}}
+    <h3>{{this}}</h3>
+  {{/each}}
+</main>
