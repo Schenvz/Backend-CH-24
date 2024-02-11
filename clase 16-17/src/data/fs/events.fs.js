@@ -58,7 +58,7 @@ class EventsManager {
     try {
       const one = this.events.find((each) => each.id === id);
       if (!one) {
-        const error = new Error("there isn't event!");
+        const error = new Error("there isn't an event!");
         error.statusCode = 404;
         throw error;
       } else {
